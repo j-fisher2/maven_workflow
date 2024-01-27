@@ -101,6 +101,41 @@ public class Binary
     		return orResult;
 	}
 
+	public static Binary and(Binary num1, Binary num2) {
+    		int ind1 = num1.number.length() - 1;
+    		int ind2 = num2.number.length() - 1;
+    		String result = "";
+
+    		while (ind1 >= 0 && ind2 >= 0) {
+        		char bit1 = num1.number.charAt(ind1);
+        		char bit2 = num2.number.charAt(ind2);
+
+        		if (bit1 == '1' && bit2 == '1') {
+            			result = "1" + result;
+        		} else {
+            			result = "0" + result;
+        		}
+
+        		ind1--;
+        		ind2--;
+    		}
+
+    		// Pad the result with leading zeros if necessary
+    		while (ind1 >= 0) {
+        		result = "0" + result;
+        		ind1--;
+    		}
+
+    		while (ind2 >= 0) {
+        		result = "0" + result;
+        		ind2--;
+    		}
+
+    		Binary andResult = new Binary(result);
+    		return andResult;
+	}
+
+
 
 
 
