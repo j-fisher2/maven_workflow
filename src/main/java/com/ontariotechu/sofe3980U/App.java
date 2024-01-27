@@ -24,5 +24,11 @@ public class App
         System.out.println( "Second binary number is "+binary2.getValue());
 		Binary sum= Binary.add(binary1,binary2);
 		System.out.println( "Their summation is "+sum.getValue());
+		Binary multiply=Binary.multiplication(binary1,binary2);
+		System.out.println("Their multiplication is "+multiply.getValue());
+		Binary and=Binary.and(binary1,binary2);
+		System.out.println("Their logical AND is "+and.getValue());
+		Binary or=Binary.or(binary1,binary2);
+		System.out.println("Their logical OR is "+or.getValue());
     }
 }
