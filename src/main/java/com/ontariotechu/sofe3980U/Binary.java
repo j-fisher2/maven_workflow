@@ -78,4 +78,31 @@ public class Binary
 		return result;
 		
 	}
+	public static Binary or(Binary num1, Binary num2) {
+    		int ind1 = num1.number.length() - 1;
+    		int ind2 = num2.number.length() - 1;
+    		String result = "";
+
+    		while (ind1 >= 0 || ind2 >= 0) { // loop until all digits are processed
+        		char digit1 = (ind1 >= 0) ? num1.number.charAt(ind1) : '0';
+        		char digit2 = (ind2 >= 0) ? num2.number.charAt(ind2) : '0';
+
+        		// Perform binary OR operation
+        		char orResult = (digit1 == '1' || digit2 == '1') ? '1' : '0';
+
+        		result = orResult + result; // append the result to the left
+
+        		// Update indices
+        		ind1--;
+        		ind2--;
+    		}
+
+    		Binary orResult = new Binary(result); // create a binary object with the calculated value.
+    		return orResult;
+	}
+
+
+
+
+
 }
