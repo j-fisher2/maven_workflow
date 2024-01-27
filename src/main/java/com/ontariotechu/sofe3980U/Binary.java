@@ -135,6 +135,19 @@ public class Binary
     		return andResult;
 	}
 
+	public static Binary multiplication(Binary num1, Binary num2){
+		Binary temp=new Binary("0");
+		
+		int decimal_number=Integer.parseInt(num1.number,2);
+		
+		for(int i=0;i<decimal_number;i++){
+			temp=add(temp,num2);
+			
+		}
+		return temp;
+
+	}
+
 
 
 
